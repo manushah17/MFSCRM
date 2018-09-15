@@ -4,6 +4,12 @@
     <h1>Add a New Service</h1>
     <form method="POST" class="service-form">{% csrf_token %}
           {{ form|crispy }}
-        <button type="submit" class="save btn btn-default">Save</button>
+
+    <table>
+        <tr>
+         	<td><button type="submit" class="save btn btn-default">Save</button></td>
+         	<td><a href="{% url 'crm:service_list' %}" class="btn btn-default">Cancel</a></td>
+        </tr>
+    </table>
     </form>
 {% endblock %}

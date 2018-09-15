@@ -4,6 +4,12 @@
     <h1>Edit Product</h1>
     <form method="POST" class="product-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Update</button>
+
+     <table>
+        <tr>
+         	<td><button type="submit" class="save btn btn-default">Update</button></td>
+         	<td><a href="{% url 'crm:product_list' %}" class="btn btn-default">Cancel</a></td>
+        </tr>
+    </table>
     </form>
 {% endblock %}

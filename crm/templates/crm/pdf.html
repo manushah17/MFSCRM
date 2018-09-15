@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css">
+body {
+    font-family:Helvetica, sans-serif;
+    color:#222;
+    line-height:1.5;
+}
+table {
+    width:100%;
+    border-spacing:0;
+    border-collapse: collapse;
+    margin:20px 0;
+}
+table th, table td {
+    text-align:left;
+    font-size:14px;
+    padding:10px;
+    margin:0;
+}
+tbody tr:nth-child(odd) {
+    background:#efefef;
+}
+thead th, tbody tr.total {
+    background:#5993bb;
+    color:#fff;
+    font-weight:bold;
+}
+h1 {
+    margin:0;
+}
+.secondary {
+    color:#bbb;
+    margin-bottom:20px;
+}
+.num {
+    text-align:right;
+}
+.paid, .pending {
+    color:#1bae37;
+    border:4px solid #1bae37;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:22px;
+    padding:12px;
+    float:right;
+    transform: rotate(-15deg);
+    margin-right:40px;
+}
+.pending {
+    color:#a82d2d;
+    border:4px solid #a82d2d;
+}
+</style>
+
+</head>
+<body>
+  <div class="row">
+    <h1 style="padding-left: 15Px">Customer Summary</h1>
+</div>
+
+    <div class="row">
+        <h2 style="padding-left: 15Px">Product Information</h2>
+    </div>
+ <div class="row">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr class="bg-info">
+                <th>Product</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Pickup Time</th>
+                <th>Total Charge</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.product }}</td>
+                    <td>{{ product.p_description }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.pickup_time }}</td>
+                    <td>{{ product.charge }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+  <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr class="bg-info">
+                <th>Total of Product Charges</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ sum_product_charge.charge__sum }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
