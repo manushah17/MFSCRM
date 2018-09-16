@@ -8,7 +8,7 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     # Customer
     path('customer_list', views.customer_list, name='customer_list'),
-    path('customer_list/<str:orderby>/', views.customer_list_order, name='customer_order'),
+    path('customer_list/<str:orderby>/<str:arrw>/', views.customer_list_order, name='customer_order'),
     #url(r'^customer_list/order/(?P<order_by>[0-9]+)$', views.customer_list, name='customer_order'),
     path('customer/create/', views.customer_new, name='customer_new'),
     path('customer/<int:pk>/edit/', views.customer_edit, name='customer_edit'),

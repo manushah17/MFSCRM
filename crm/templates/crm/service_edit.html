@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Edit Service</h1>
     <form method="POST" class="service-form">{% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
 
      <table>
         <tr>
