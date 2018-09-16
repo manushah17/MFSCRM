@@ -261,7 +261,7 @@ def admin_summary_pdf(request, pk):
     sum_service_charge = Service.objects.filter(cust_name=pk).aggregate(Sum('service_charge'))
     sum_product_charge = Product.objects.filter(cust_name=pk).aggregate(Sum('charge'))
 
-    context = {'customers': customers, 'products': products, 'customer': customer,
+    context = {'products': products, 'customer': customer,
                'services': services,
                'sum_service_charge': sum_service_charge,
                'sum_product_charge': sum_product_charge, }
