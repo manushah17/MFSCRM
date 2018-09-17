@@ -272,7 +272,7 @@ def admin_summary_pdf(request, pk):
 
     summarypdf = generate_summary_pdf(request, pk, context)
     summaryFileName = 'Summary_' + str(customer.cust_name) + '.pdf'
-    msg = EmailMessage(subject, message, from_email="mavstaruno@gmail.com", to=[to_email_id])
+    msg = EmailMessage(subject, message, from_email="mavstaruno@gmail.com", to=['manushah@unomaha.edu'])
     msg.attach(summaryFileName, summarypdf, 'application/pdf')
     # msg.content_subtype = "html"
     msg.send()
